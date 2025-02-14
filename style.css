@@ -102,12 +102,21 @@ img {
 }
 
 .sparkle {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     background: gold;
     border-radius: 50%;
     animation: sparkleTwinkle 1s infinite;
 }
+
+/* Animations */
+.a1 { left: 20%; transform: scale(0.6); animation: slideUp 4s linear infinite, sideSway 2s ease-in-out infinite alternate; }
+.a2 { left: 55%; animation: slideUp 5s linear infinite, sideSway 4s ease-in-out infinite alternate; }
+.a3 { left: 10%; transform: scale(0.8); animation: slideUp 7s linear infinite, sideSway 2s ease-in-out infinite alternate; }
+
+.s1 { left: 30%; animation: sparkleUp 3s linear infinite; }
+.s2 { left: 60%; animation: sparkleUp 4s linear infinite; }
+.s3 { left: 45%; animation: sparkleUp 5s linear infinite; }
 
 /* Animations */
 @keyframes slideUp {
