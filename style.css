@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffdde1;
+}
+
+/* Container */
+.container {
+    text-align: center;
+}
+
+/* Cover Page */
+.cover {
+    display: block;
+}
+
+.cover img {
+    width: 200px;
+    margin: 20px 0;
+}
+
+.cover button {
+    background-color: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Pages */
+.pages {
+    display: none;
+    position: relative;
+}
+
+.left{
+    margin-right: 20px;
+}
+
+.right{
+    margin-right: 20px;
+    text-align: center;
+}
+
+.page5{
+    font-size: 25px;
+    text-align: center;
+    width: 500px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 250px;
+    height: 250px;
+}
+
+/* Floating Hearts & Sparkles */
+.hearts, .sparkles {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.heart, .sparkle {
+    position: absolute;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 25px;
+    height: 40px;
+    background: red;
+    border-radius: 25px 25px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.sparkle {
+    width: 8px;
+    height: 8px;
+    background: gold;
+    border-radius: 50%;
+    animation: sparkleTwinkle 1s infinite;
+}
+
+/* Animations */
+.a1 { left: 20%; transform: scale(0.6); animation: slideUp 4s linear infinite, sideSway 2s ease-in-out infinite alternate; }
+.a2 { left: 55%; animation: slideUp 5s linear infinite, sideSway 4s ease-in-out infinite alternate; }
+.a3 { left: 10%; transform: scale(0.8); animation: slideUp 7s linear infinite, sideSway 2s ease-in-out infinite alternate; }
+
+.s1 { left: 30%; animation: sparkleUp 3s linear infinite; }
+.s2 { left: 60%; animation: sparkleUp 4s linear infinite; }
+.s3 { left: 45%; animation: sparkleUp 5s linear infinite; }
+
+@keyframes slideUp {
+    0% { top: 0; }
+    100% { top: -600px; }
+}
+
+@keyframes sideSway {
+    0% { margin-left: 0; }
+    50% { margin-left: 50px; }
+    100% { margin-left: 0; }
+}
+
+@keyframes sparkleUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-500px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes sparkleTwinkle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+}
+
+/* General Button Styling */
+button {
+    font-size: 24px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    outline: none;
+}
+
+/* Cover Page Button */
+.cover button {
+    background: #ff4b5c;
+    color: white;
+    box-shadow: 4px 4px 0 #d13749;
+    transform: rotate(-3deg);
+}
+
+.cover button:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 6px 6px 0 #b82e3f;
+}
+
+/* Navigation Buttons */
+#prev, #next, #close {
+    position: absolute;
+    bottom: -90px;
+    font-size: 28px;
+    padding: 14px;
+    border-radius: 50%;
+    background: #ffd166;
+    color: #5c2e00;
+    box-shadow: 4px 4px 0 #d9a842;
+}
+
+#prev:hover, #next:hover, #close:hover {
+    transform: scale(1.2) rotate(-5deg);
+    box-shadow: 6px 6px 0 #c09335;
+}
+
+/* Positioning */
+#prev {
+    left: 20px;
+}
+
+#next {
+    right: 20px;
+}
+
+#close {
+    right: 15%;
+    transform: translateX(50%);
+    display: none;
+    background: #ff6b6b;
+    box-shadow: 4px 4px 0 #d94f4f;
+}
+
+#close:hover {
+    transform: translateX(50%) scale(1.2) rotate(5deg);
+    box-shadow: 6px 6px 0 #c93e3e;
+}
